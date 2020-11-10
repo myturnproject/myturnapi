@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Author = require('./author');
+const Author = require("./author");
 
 //schema
 const ServiceSchema = new mongoose.Schema({
@@ -7,7 +7,7 @@ const ServiceSchema = new mongoose.Schema({
     type: String,
     required: true,
     minlength: 3,
-    maxlength: 20
+    maxlength: 20,
   },
   author: Author.schema,
   genre: {
@@ -18,4 +18,4 @@ const ServiceSchema = new mongoose.Schema({
   },
 });
 
-module.exports = new mongoose.model('Service', ServiceSchema);
+exports.Service = new mongoose.model("Service", ServiceSchema);
